@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A30725022806D6550028AF4F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A30725012806D6540028AF4F /* CoreLocation.framework */; };
+		A30725042806D65D0028AF4F /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A30725032806D65D0028AF4F /* HealthKit.framework */; };
+		A30725052806D6610028AF4F /* UnityFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3D535422806D2F4007B027D /* UnityFramework.framework */; };
+		A30725062806D6610028AF4F /* UnityFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A3D535422806D2F4007B027D /* UnityFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A3D535032806C3EF007B027D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D535022806C3EF007B027D /* AppDelegate.swift */; };
 		A3D535052806C3EF007B027D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D535042806C3EF007B027D /* SceneDelegate.swift */; };
 		A3D535072806C3EF007B027D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D535062806C3EF007B027D /* ViewController.swift */; };
@@ -40,9 +44,46 @@
 			remoteGlobalIDString = 9D25AB9D213FB47800354C27;
 			remoteInfo = UnityFramework;
 		};
+		A3D5353D2806D2F4007B027D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A3D535372806D2F4007B027D /* Unity-iPhone.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1D6058910D05DD3D006BFB54;
+			remoteInfo = "Unity-iPhone";
+		};
+		A3D5353F2806D2F4007B027D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A3D535372806D2F4007B027D /* Unity-iPhone.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5623C57317FDCB0800090B9E;
+			remoteInfo = "Unity-iPhone Tests";
+		};
+		A3D535412806D2F4007B027D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A3D535372806D2F4007B027D /* Unity-iPhone.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9D25AB9D213FB47800354C27;
+			remoteInfo = UnityFramework;
+		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		A30725072806D6610028AF4F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A30725062806D6610028AF4F /* UnityFramework.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		A30725012806D6540028AF4F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		A30725032806D65D0028AF4F /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		A3D534FF2806C3EF007B027D /* AETHA_iOSFramework_pt2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AETHA_iOSFramework_pt2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3D535022806C3EF007B027D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3D535042806C3EF007B027D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +96,7 @@
 		A3D5351A2806D182007B027D /* ActivationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivationView.swift; sourceTree = "<group>"; };
 		A3D5351D2806D201007B027D /* Unity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unity.swift; sourceTree = "<group>"; };
 		A3D5351F2806D253007B027D /* Unity-iPhone.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "Unity-iPhone.xcodeproj"; path = "../../../UnityBuilds/v4/Unity-iPhone.xcodeproj"; sourceTree = "<group>"; };
+		A3D535372806D2F4007B027D /* Unity-iPhone.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "Unity-iPhone.xcodeproj"; path = "../../../UnityBuilds/v4/Unity-iPhone.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,17 +104,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A30725022806D6550028AF4F /* CoreLocation.framework in Frameworks */,
+				A30725042806D65D0028AF4F /* HealthKit.framework in Frameworks */,
+				A30725052806D6610028AF4F /* UnityFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A30725002806D6540028AF4F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A30725032806D65D0028AF4F /* HealthKit.framework */,
+				A30725012806D6540028AF4F /* CoreLocation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A3D534F62806C3EF007B027D = {
 			isa = PBXGroup;
 			children = (
 				A3D535012806C3EF007B027D /* AETHA_iOSFramework_pt2 */,
 				A3D535002806C3EF007B027D /* Products */,
+				A30725002806D6540028AF4F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				A3D5351F2806D253007B027D /* Unity-iPhone.xcodeproj */,
+				A3D535372806D2F4007B027D /* Unity-iPhone.xcodeproj */,
 				A3D5350D2806C3F5007B027D /* LaunchScreen.storyboard */,
 				A3D535082806C3EF007B027D /* Main.storyboard */,
 			);
@@ -136,6 +192,16 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		A3D535382806D2F4007B027D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A3D5353E2806D2F4007B027D /* UnityEnvironment.app */,
+				A3D535402806D2F4007B027D /* Unity-iPhone Tests.xctest */,
+				A3D535422806D2F4007B027D /* UnityFramework.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -146,6 +212,7 @@
 				A3D534FB2806C3EF007B027D /* Sources */,
 				A3D534FC2806C3EF007B027D /* Frameworks */,
 				A3D534FD2806C3EF007B027D /* Resources */,
+				A30725072806D6610028AF4F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -184,6 +251,10 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = A3D535382806D2F4007B027D /* Products */;
+					ProjectRef = A3D535372806D2F4007B027D /* Unity-iPhone.xcodeproj */;
+				},
+				{
 					ProductGroup = A3D535202806D253007B027D /* Products */;
 					ProjectRef = A3D5351F2806D253007B027D /* Unity-iPhone.xcodeproj */;
 				},
@@ -215,6 +286,27 @@
 			fileType = wrapper.framework;
 			path = UnityFramework.framework;
 			remoteRef = A3D535292806D254007B027D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A3D5353E2806D2F4007B027D /* UnityEnvironment.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = UnityEnvironment.app;
+			remoteRef = A3D5353D2806D2F4007B027D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A3D535402806D2F4007B027D /* Unity-iPhone Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Unity-iPhone Tests.xctest";
+			remoteRef = A3D5353F2806D2F4007B027D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A3D535422806D2F4007B027D /* UnityFramework.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = UnityFramework.framework;
+			remoteRef = A3D535412806D2F4007B027D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
