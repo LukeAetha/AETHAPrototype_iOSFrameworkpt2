@@ -10,9 +10,9 @@ import SwiftUI
 
 struct DataView: View {
     
-//  @StateObject var locationManager = fetchLocation()
 //  @StateObject var healthStore = fetchActivity()
-//    @StateObject var locationManager = LocationManager()
+@StateObject var weatherViewModel = WeatherViewModel()
+    
     
   
     
@@ -22,26 +22,11 @@ struct DataView: View {
         
                         VStack(alignment: .leading, spacing: 10)
                         {
-                            Text("Location")
-                                .font(.title2)
-                            if let location = locationManager.location
-                            {
-                                Text("lat:\(location.longitude)")
-                                Text("long:\(location.latitude)")
-                            }
-                            else
-                            {
-                                if locationManager.isLoading
-                                {
-                                    ProgressView()
-                                }
-                                else
-                                {
-                                   Text("---")
-                                   Text("---")
-                                }
-                            }
-                            
+                            Text("Weather")
+                                .font(.title)
+                            Text(weatherViewModel.title)
+                            Text(weatherViewModel.temp)
+                            Text(weatherViewModel.timezone)
                         }
                         .padding(.bottom, 50)
         
