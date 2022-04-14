@@ -10,8 +10,8 @@ import SwiftUI
 
 struct DataView: View {
     
-//  @StateObject var healthStore = fetchActivity()
-@StateObject var weatherViewModel = WeatherViewModel()
+
+@StateObject var weatherViewModel = WeatherManager()
     
     
   
@@ -20,35 +20,36 @@ struct DataView: View {
                     VStack (alignment: .leading, spacing: 20)
                     {
         
-                        VStack(alignment: .leading, spacing: 10)
+                        HStack(spacing: 10)
                         {
+                            VStack
+                            {
+                            Text("Location")
+                                .font(.title2)
+                            Text("lat:\(weatherViewModel.lat)")
+                            Text("long:\(weatherViewModel.long)")
+                            }
+                            
+                            VStack
+                            {
                             Text("Weather")
-                                .font(.title)
-                            Text(weatherViewModel.title)
+                                .font(.title2)
+                            Text(weatherViewModel.city)
                             Text(weatherViewModel.temp)
-                            Text(weatherViewModel.timezone)
+                            Text(weatherViewModel.weather_main)
+                            }
                         }
-                        .padding(.bottom, 50)
+                        .padding(.bottom, 20)
         
                         VStack(alignment: .leading, spacing: 10)
                         {
         
-                            Text("Activity")
+                            Text("Activitylevel")
                                 .font(.title2)
                             Text("steps:     -")
         
                         }
                         .padding(.bottom, 50)
-        
-                        VStack(alignment: .leading, spacing: 10)
-                        {
-        
-                            Text("Star Sign")
-                                .font(.title2)
-                            Text("-")
-        
-                        }
-                        .padding(.bottom, 70)
         
         
                     VStack
@@ -57,8 +58,8 @@ struct DataView: View {
         
         
                         Button(action: {
-                            Unity.shared.show()
-                            Unity.shared.sendMessage("Visuals", methodName: "SetValues", message: "dataisfetched")
+                            //Unity.shared.show()
+                            //Unity.shared.sendMessage("Visuals", methodName: "SetValues", message: "dataisfetched")
                         })
                         {
                                 Text("launch Experience")
