@@ -8,7 +8,7 @@
 import Foundation
 import HealthKit
 
-class ActivityManager: ObservableObject
+class HealthManager: ObservableObject
 {
     @Published var healthStore = HKHealthStore()
     @Published var stepCount: String = ""

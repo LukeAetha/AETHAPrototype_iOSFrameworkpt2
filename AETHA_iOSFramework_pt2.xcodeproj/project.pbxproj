@@ -10,6 +10,7 @@
 		A30725022806D6550028AF4F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A30725012806D6540028AF4F /* CoreLocation.framework */; };
 		A30725042806D65D0028AF4F /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A30725032806D65D0028AF4F /* HealthKit.framework */; };
 		A3081EC5280D8C8D00DC24AF /* DataModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3081EC4280D8C8D00DC24AF /* DataModifier.swift */; };
+		A3C771C72816A85A00194C22 /* TimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C771C62816A85A00194C22 /* TimeManager.swift */; };
 		A3D535032806C3EF007B027D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D535022806C3EF007B027D /* AppDelegate.swift */; };
 		A3D535052806C3EF007B027D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D535042806C3EF007B027D /* SceneDelegate.swift */; };
 		A3D535072806C3EF007B027D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D535062806C3EF007B027D /* ViewController.swift */; };
@@ -22,7 +23,7 @@
 		A3F83C9128082A8F00431AD4 /* Unity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F83C692806E47800431AD4 /* Unity.swift */; };
 		A3F83CA028082E2300431AD4 /* UnityFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3D535422806D2F4007B027D /* UnityFramework.framework */; };
 		A3F83CA128082E2300431AD4 /* UnityFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A3D535422806D2F4007B027D /* UnityFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		A3F83CAB28085E0E00431AD4 /* ActivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F83CAA28085E0E00431AD4 /* ActivityManager.swift */; };
+		A3F83CAB28085E0E00431AD4 /* HealthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F83CAA28085E0E00431AD4 /* HealthManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,7 @@
 		A30725012806D6540028AF4F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		A30725032806D65D0028AF4F /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		A3081EC4280D8C8D00DC24AF /* DataModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModifier.swift; sourceTree = "<group>"; };
+		A3C771C62816A85A00194C22 /* TimeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeManager.swift; sourceTree = "<group>"; };
 		A3D534FF2806C3EF007B027D /* AETHA_iOSFramework_pt2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AETHA_iOSFramework_pt2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3D535022806C3EF007B027D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3D535042806C3EF007B027D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,7 +106,7 @@
 		A3F83C822806F64000431AD4 /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
 		A3F83C9628082E1700431AD4 /* UnityFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UnityFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3F83CA62808555F00431AD4 /* AETHA_iOSFramework_pt2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AETHA_iOSFramework_pt2.entitlements; sourceTree = "<group>"; };
-		A3F83CAA28085E0E00431AD4 /* ActivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityManager.swift; sourceTree = "<group>"; };
+		A3F83CAA28085E0E00431AD4 /* HealthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,14 @@
 			path = Weather;
 			sourceTree = "<group>";
 		};
+		A3C771BF2816A82B00194C22 /* Daytime */ = {
+			isa = PBXGroup;
+			children = (
+				A3C771C62816A85A00194C22 /* TimeManager.swift */,
+			);
+			path = Daytime;
+			sourceTree = "<group>";
+		};
 		A3D534F62806C3EF007B027D = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +174,7 @@
 				A3D535022806C3EF007B027D /* AppDelegate.swift */,
 				A3D535042806C3EF007B027D /* SceneDelegate.swift */,
 				A3D535172806CC21007B027D /* Views */,
+				A3C771BF2816A82B00194C22 /* Daytime */,
 				A3F83CA7280857B600431AD4 /* Healthdata */,
 				A30725082806DA5A0028AF4F /* Weather */,
 				A3D5351C2806D1E4007B027D /* Unity */,
@@ -226,7 +237,7 @@
 		A3F83CA7280857B600431AD4 /* Healthdata */ = {
 			isa = PBXGroup;
 			children = (
-				A3F83CAA28085E0E00431AD4 /* ActivityManager.swift */,
+				A3F83CAA28085E0E00431AD4 /* HealthManager.swift */,
 			);
 			path = Healthdata;
 			sourceTree = "<group>";
@@ -359,10 +370,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3D5351B2806D182007B027D /* ActivationView.swift in Sources */,
-				A3F83CAB28085E0E00431AD4 /* ActivityManager.swift in Sources */,
+				A3F83CAB28085E0E00431AD4 /* HealthManager.swift in Sources */,
 				A3D535072806C3EF007B027D /* ViewController.swift in Sources */,
 				A3D535032806C3EF007B027D /* AppDelegate.swift in Sources */,
 				A3F83C832806F64000431AD4 /* WeatherManager.swift in Sources */,
+				A3C771C72816A85A00194C22 /* TimeManager.swift in Sources */,
 				A3D535192806D0BA007B027D /* DataView.swift in Sources */,
 				A3F83C9128082A8F00431AD4 /* Unity.swift in Sources */,
 				A3081EC5280D8C8D00DC24AF /* DataModifier.swift in Sources */,

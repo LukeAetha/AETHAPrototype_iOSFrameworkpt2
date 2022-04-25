@@ -12,8 +12,9 @@ struct DataView: View {
     
 
 @StateObject var weatherData = WeatherManager()
-@StateObject var activityData = ActivityManager()
+@StateObject var activityData = HealthManager()
 @StateObject var dataModifier = DataModifier()
+@StateObject var dayTime = TimeManager()
     
     
   
@@ -54,7 +55,16 @@ struct DataView: View {
                                     .font(.title2)
                                 Text("steps today:\(activityData.stepCount)")
                             }
-                            .padding(.bottom, 170)
+                            .padding(.bottom, 30)
+                            
+                            VStack(alignment: .leading)
+                            {
+                                Text("Daytime")
+                                    .font(.title2)
+                                Text("\(dayTime.time)")
+                                Text("\(dayTime.daysector)")
+                            }
+                            .padding(.bottom, 150)
                             
                         }
         
@@ -68,7 +78,7 @@ struct DataView: View {
                             //Unity.shared.UnitySendMessage("Visuals", methodName : "setColor", message: "\(dataModifier.colorModifier)")
                             //Unity.shared.UnitySendMessage("Visuals", methodName : "setSound", message: "\(dataModifier.soundModifier)")
                             
-                            print ("\(dataModifier.turbulanceModifier)|\(dataModifier.remapModifier)|\(dataModifier.colorModifier)")
+                            print ("\(dataModifier.turbulanceModifier)|\(weatherData.remapModifier)|\(dataModifier.colorModifier)")
                         })
                         {
                             Text("launch Experience")

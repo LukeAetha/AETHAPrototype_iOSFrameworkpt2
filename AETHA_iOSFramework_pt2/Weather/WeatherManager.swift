@@ -21,6 +21,8 @@ class WeatherManager: NSObject, ObservableObject, CLLocationManagerDelegate
     @Published var lat = Double()
     @Published var long = Double()
     
+    @Published var remapModifier: String = ""
+    
     
     let API_KEY = "832a7d4ab32891a815973c2e62c556b1"
     
@@ -77,14 +79,17 @@ class WeatherManager: NSObject, ObservableObject, CLLocationManagerDelegate
         //Convert Data to Model
             do
             {
+                let group = DispatchGroup()
                 let model = try JSONDecoder().decode(WeatherModel.self, from: data)
-            
-                DispatchQueue.main.async {
+                
+                group.enter()
+                DispatchQueue.global(qos: .default).async {
                     self.city = model.name
                     self.temp = "\(model.main.temp)°"
                     self.weather_main = model.weather.first?.main ?? "no weatherdata"
                 }
                 print("weather got fetched")
+              
             }
             catch
             {
@@ -95,6 +100,42 @@ class WeatherManager: NSObject, ObservableObject, CLLocationManagerDelegate
         }
         task.resume()
         
+        print("\(weather_main)")
+        setRemapModifier()
+        
+    }
+    
+    
+    func setRemapModifier()
+    {
+        if (weather_main == "Clouds")
+        {
+            self.remapModifier = "0.3"
+        }
+        else if (weather_main == "Clear")
+        {
+            self.remapModifier = "2"
+        }
+        else if (weather_main == "Thunderstorm")
+        {
+            self.remapModifier = "0.3"
+        }
+        else if (weather_main == "Rain")
+        {
+            self.remapModifier = "1.3"
+        }
+        else if (weather_main == "Snow")
+        {
+            self.remapModifier = "0.8"
+        }
+        //else if (weatherManager.weather_main == "Mist" || == "Smoke" || == "Haze" || == "Dust" || == "Fog" || "Sand" || "Ash" || "Squall" || "Tornado")
+        //{
+            //self.remapModifier = "0.1"
+        //}
+        else
+        {
+            self.remapModifier = "0"
+        }
     }
     
     
