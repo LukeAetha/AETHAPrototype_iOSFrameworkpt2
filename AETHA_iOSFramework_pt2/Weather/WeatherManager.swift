@@ -21,6 +21,7 @@ class WeatherManager: NSObject, ObservableObject, CLLocationManagerDelegate
     @Published var lat = Double()
     @Published var long = Double()
     
+    
     let API_KEY = "832a7d4ab32891a815973c2e62c556b1"
     
     
@@ -61,7 +62,7 @@ class WeatherManager: NSObject, ObservableObject, CLLocationManagerDelegate
     
     func fetchWeather()
     {
-        guard let url = URL(string: "https://api.openweathermap.org/data/2.5/weather?lat=\(lat)&lon=\(long)&appid=\(API_KEY)")
+        guard let url = URL(string: "https://api.openweathermap.org/data/2.5/weather?lat=\(lat)&lon=\(long)&appid=\(API_KEY)&units=metric")
         else{return}
         
         print("\(lat) | \(long) |\(url)")
@@ -95,6 +96,7 @@ class WeatherManager: NSObject, ObservableObject, CLLocationManagerDelegate
         task.resume()
         
     }
+    
     
     //JSON Model for OpenWeatherMap
     struct WeatherModel: Decodable
