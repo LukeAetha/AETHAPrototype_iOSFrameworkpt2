@@ -11,72 +11,78 @@ import SwiftUI
 struct DataView: View {
     
 
-@StateObject var weatherViewModel = WeatherManager()
+@StateObject var weatherData = WeatherManager()
+@StateObject var activityData = ActivityManager()
+@StateObject var dataModifier = DataModifier()
     
     
   
     
     var body: some View {
-                    VStack (alignment: .leading, spacing: 20)
+        VStack (alignment: .center, spacing: 10)
                     {
-        
-                        HStack(spacing: 10)
+                        VStack (alignment: .leading)
                         {
-                            VStack
+                            HStack(alignment: .top, spacing: 100)
                             {
-                            Text("Location")
-                                .font(.title2)
-                            Text("lat:\(weatherViewModel.lat)")
-                            Text("long:\(weatherViewModel.long)")
-                            }
+                                VStack(alignment: .leading)
+                                {
+                                    Text("Location")
+                                        .font(.title3)
+                                    Text(weatherData.city)
+                                        .font(.title3)
+                                    Text("lat:\(weatherData.lat)")
+                                    Text("long:\(weatherData.long)")
+                                }
                             
-                            VStack
-                            {
-                            Text("Weather")
-                                .font(.title2)
-                            Text(weatherViewModel.city)
-                            Text(weatherViewModel.temp)
-                            Text(weatherViewModel.weather_main)
+                            
+                                VStack(alignment: .trailing)
+                                {
+                                    Text("Weather")
+                                        .font(.title3)
+                                    Text(weatherData.weather_main)
+                                        .font(.title3)
+                                    Text("\(weatherData.temp)C")
+                                }
+                                .multilineTextAlignment(.trailing)
                             }
-                        }
-                        .padding(.bottom, 20)
+                            .padding(.bottom, 30)
         
-                        VStack(alignment: .leading, spacing: 10)
+                            VStack(alignment: .leading)
+                            {
+                                Text("Activitylevel")
+                                    .font(.title2)
+                                Text("steps today:\(activityData.stepCount)")
+                            }
+                            .padding(.bottom, 170)
+                            
+                        }
+        
+        
+                    
+                        Button(action:
                         {
-        
-                            Text("Activitylevel")
-                                .font(.title2)
-                            Text("steps:     -")
-        
-                        }
-                        .padding(.bottom, 50)
-        
-        
-                    VStack
-                    {
-                     
-        
-        
-                        Button(action: {
                             //Unity.shared.show()
-                            //Unity.shared.sendMessage("Visuals", methodName: "SetValues", message: "dataisfetched")
+                            //Unity.shared.UnitySendMessage("Visuals", methodName : "setTurbulance", message: "\(dataModifier.turbulanceModifier)")
+                            //Unity.shared.UnitySendMessage("Visuals", methodName : "setRemamp", message: "\(dataModifier.remapModifier)")
+                            //Unity.shared.UnitySendMessage("Visuals", methodName : "setColor", message: "\(dataModifier.colorModifier)")
+                            //Unity.shared.UnitySendMessage("Visuals", methodName : "setSound", message: "\(dataModifier.soundModifier)")
+                            
+                            print ("\(dataModifier.turbulanceModifier)|\(dataModifier.remapModifier)|\(dataModifier.colorModifier)")
                         })
                         {
-                                Text("launch Experience")
+                            Text("launch Experience")
                                 .frame(width: 200, height: 60)
                                 .foregroundColor(Color.white)
                                 .background(Color.black)
                                 .cornerRadius(10)
-        
-        
                         }
-        
-                    }.padding(70)
+                    }.padding(20)
                         
                         
                       
                         
-                    }
+                    
     }
 }
 
