@@ -79,16 +79,14 @@ class WeatherManager: NSObject, ObservableObject, CLLocationManagerDelegate
         //Convert Data to Model
             do
             {
-                let group = DispatchGroup()
                 let model = try JSONDecoder().decode(WeatherModel.self, from: data)
                 
-                group.enter()
-                DispatchQueue.global(qos: .default).async {
+                DispatchQueue.main.async {
                     self.city = model.name
                     self.temp = "\(model.main.temp)°"
                     self.weather_main = model.weather.first?.main ?? "no weatherdata"
                 }
-                print("weather got fetched")
+                
               
             }
             catch
@@ -100,8 +98,8 @@ class WeatherManager: NSObject, ObservableObject, CLLocationManagerDelegate
         }
         task.resume()
         
-        print("\(weather_main)")
-        setRemapModifier()
+//        print("\(weather_main)")
+//        setRemapModifier()
         
     }
     

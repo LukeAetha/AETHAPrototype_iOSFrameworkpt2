@@ -73,12 +73,12 @@ struct DataView: View {
                         Button(action:
                         {
                             //Unity.shared.show()
-                            //Unity.shared.UnitySendMessage("Visuals", methodName : "setTurbulance", message: "\(dataModifier.turbulanceModifier)")
-                            //Unity.shared.UnitySendMessage("Visuals", methodName : "setRemamp", message: "\(dataModifier.remapModifier)")
-                            //Unity.shared.UnitySendMessage("Visuals", methodName : "setColor", message: "\(dataModifier.colorModifier)")
-                            //Unity.shared.UnitySendMessage("Visuals", methodName : "setSound", message: "\(dataModifier.soundModifier)")
+                            //Unity.shared.UnitySendMessage("Visuals", methodName : "setTurbulance", message: "\(weatherData.weather_main)")
+                            //Unity.shared.UnitySendMessage("Visuals", methodName : "setRemamp", message: "\(activityData.stepCount)")
+                            //Unity.shared.UnitySendMessage("Visuals", methodName : "setColor", message: "\(dayTime.daysector)")
+                            //Unity.shared.UnitySendMessage("Sound", methodName : "setSound", message: "\(dataModifier.soundModifier)")
                             
-                            print ("\(dataModifier.turbulanceModifier)|\(weatherData.remapModifier)|\(dataModifier.colorModifier)")
+                            print ("\(activityData.stepCount)|\(weatherData.weather_main)|\(dayTime.daysector)")
                         })
                         {
                             Text("launch Experience")
@@ -88,11 +88,6 @@ struct DataView: View {
                                 .cornerRadius(10)
                         }
                     }.padding(20)
-                        
-                        
-                      
-                        
-                    
     }
 }
 
